@@ -1,18 +1,18 @@
 /* This is the CSS for the HTML of my program. */
 :root {
-  --bg: #ebf2fa;
-  --surface: #05668d;
-  --surface-2: #427aa1;
-  --surface-3: ##1f8ab5;
-  --border: rgba(255,255,255,0.08);
-  --text: #0f0c08;
-  --muted: #9fadcf;
-  --primary: #a5be00;
-  --primary-2: #679436;
-  --success: #4ade80;
-  --warning: #facc15;
-  --danger: #fb7185;
-  --shadow: 0 20px 45px rgba(0,0,0,0.28);
+  --bg: #EBF2FA;
+  --surface: #ffffff;
+  --surface-2: #f4f8fc;
+  --surface-3: #dfeaf5;
+  --border: rgba(5, 102, 141, 0.16);
+  --text: #12324a;
+  --muted: #427AA1;
+  --primary: #05668D;
+  --primary-2: #427AA1;
+  --success: #679436;
+  --warning: #A5BE00;
+  --danger: #c94f4f;
+  --shadow: 0 18px 40px rgba(5, 102, 141, 0.10);
   --radius: 18px;
 }
 
@@ -21,8 +21,8 @@ html, body { margin: 0; padding: 0; }
 body {
   font-family: 'Inter', system-ui, sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(110,168,254,0.14), transparent 30%),
-    radial-gradient(circle at top right, rgba(139,92,246,0.12), transparent 28%),
+    radial-gradient(circle at top left, rgba(5, 102, 141, 0.10), transparent 30%),
+    radial-gradient(circle at top right, rgba(66, 122, 161, 0.10), transparent 28%),
     var(--bg);
   color: var(--text);
   min-height: 100vh;
@@ -78,7 +78,7 @@ h1 {
 }
 
 .stat-card, .panel {
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(235,242,250,0.96));
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -99,6 +99,7 @@ h1 {
   display: block;
   font-size: 34px;
   margin-bottom: 6px;
+  color: var(--primary);
 }
 
 .stat-card small {
@@ -106,7 +107,7 @@ h1 {
 }
 
 .stat-card.accent {
-  background: linear-gradient(135deg, rgba(110,168,254,0.22), rgba(139,92,246,0.18));
+  background: linear-gradient(135deg, rgba(5, 102, 141, 0.16), rgba(66, 122, 161, 0.16));
 }
 
 .main-grid {
@@ -161,14 +162,18 @@ input, select, textarea {
   outline: none;
 }
 
+textarea {
+  resize: none;
+}
+
 input::placeholder,
 textarea::placeholder {
-  color: #8391b4;
+  color: #6b8ca5;
 }
 
 input:focus, select:focus, textarea:focus {
-  border-color: rgba(110,168,254,0.8);
-  box-shadow: 0 0 0 4px rgba(110,168,254,0.18);
+  border-color: rgba(5, 102, 141, 0.7);
+  box-shadow: 0 0 0 4px rgba(5, 102, 141, 0.14);
 }
 
 .btn {
@@ -186,9 +191,9 @@ input:focus, select:focus, textarea:focus {
   color: white;
 }
 .btn-secondary {
-  background: rgba(110,168,254,0.14);
-  color: var(--text);
-  border-color: rgba(110,168,254,0.2);
+  background: rgba(5, 102, 141, 0.10);
+  color: var(--primary);
+  border-color: rgba(5, 102, 141, 0.18);
 }
 .btn-ghost {
   background: transparent;
@@ -245,11 +250,11 @@ input:focus, select:focus, textarea:focus {
   white-space: nowrap;
 }
 
-.badge.applied { background: rgba(110,168,254,0.16); color: #b8d2ff; }
-.badge.online-assessment { background: rgba(250,204,21,0.16); color: #fde68a; }
-.badge.interview { background: rgba(139,92,246,0.18); color: #ddd6fe; }
-.badge.offer { background: rgba(74,222,128,0.18); color: #bbf7d0; }
-.badge.rejected { background: rgba(251,113,133,0.18); color: #fecdd3; }
+.badge.applied { background: rgba(5, 102, 141, 0.12); color: #05668D; }
+.badge.online-assessment { background: rgba(165, 190, 0, 0.18); color: #6f8100; }
+.badge.interview { background: rgba(66, 122, 161, 0.16); color: #245679; }
+.badge.offer { background: rgba(103, 148, 54, 0.16); color: #4f7628; }
+.badge.rejected { background: rgba(201, 79, 79, 0.14); color: #a03a3a; }
 
 .application-meta {
   display: flex;
@@ -261,7 +266,7 @@ input:focus, select:focus, textarea:focus {
 .application-meta span,
 .note-box {
   background: var(--surface-2);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(66, 122, 161, 0.16);
   border-radius: 12px;
 }
 
@@ -273,7 +278,7 @@ input:focus, select:focus, textarea:focus {
 
 .note-box {
   padding: 12px;
-  color: #dbe4ff;
+  color: var(--text);
   line-height: 1.5;
 }
 
@@ -286,7 +291,7 @@ input:focus, select:focus, textarea:focus {
 .icon-btn {
   background: transparent;
   color: var(--danger);
-  border: 1px solid rgba(251,113,133,0.2);
+  border: 1px solid rgba(201, 79, 79, 0.18);
   border-radius: 12px;
   padding: 10px 12px;
   cursor: pointer;
@@ -307,7 +312,7 @@ input:focus, select:focus, textarea:focus {
   display: grid;
   place-items: center;
   border-radius: 18px;
-  background: rgba(110,168,254,0.14);
+  background: rgba(5, 102, 141, 0.10);
   color: var(--primary);
   font-size: 28px;
   font-weight: 800;
