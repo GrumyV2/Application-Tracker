@@ -13,9 +13,9 @@
   --warning: #A5BE00;
   --danger: #B85C5C;
   --shadow-soft: 0 10px 30px rgba(5, 102, 141, 0.06);
-  --radius-lg: 30px;
-  --radius-md: 30px;
-  --radius-sm: 30px;
+  --radius-lg: 5px;
+  --radius-md: 5px;
+  --radius-sm: 5px;
 }
 
 * { box-sizing: border-box; }
@@ -42,7 +42,7 @@ button, input, select, textarea { font: inherit; }
   padding: 14px 18px;
   background: rgba(255,255,255,0.72);
   border: 1px solid var(--line);
-  border-radius: 30px;
+  border-radius: 5px;
   backdrop-filter: blur(8px);
   box-shadow: var(--shadow-soft);
 }
@@ -58,7 +58,7 @@ button, input, select, textarea { font: inherit; }
   height: 42px;
   display: grid;
   place-items: center;
-  border-radius: 30px;
+  border-radius: 5px;
   background: var(--primary);
   color: #fff;
   font-size: 0.9rem;
