@@ -1,5 +1,4 @@
 <!-- The HTML of my program. -->
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,48 +9,56 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="app-shell">
-    <header class="topbar">
-      <div>
-        <h1>Application Tracker</h1>
-        <p class="subtitle">Track your apprenticeships, internships, and job applications.</p>
+  <div class="shell">
+    <!-- Top navigation / app bar. -->
+    <header class="appbar">
+      <div class="brand-block">
+        <!-- Simple product mark for the top-left brand area. -->
+        <div class="brand-mark" aria-hidden="true">AT</div>
+        <div>
+          <h1>Application Tracker</h1>
+          <p class="subline">Track roles, deadlines, and pipeline progress.</p>
+        </div>
       </div>
-      <div class="topbar-actions">
-        <button id="clearBtn" class="btn btn-ghost">Clear All</button>
+
+      <!-- Current top-right action. -->
+      <div class="appbar-actions">
+        <button id="clearBtn" class="btn btn-ghost">Reset</button>
       </div>
     </header>
 
-    <!-- Stat counts are updated dynamically via the back-end Javascript. -->
-    <section class="stats-grid" aria-label="Application statistics">
-      <article class="stat-card accent">
-        <span>Total</span>
+    <!-- Summary numbers are updated dynamically via the back-end Javascript. -->
+    <section class="summary-row" aria-label="Application summary">
+      <article class="summary-card emphasis">
+        <span>Total applications</span>
         <strong id="totalCount">0</strong>
-        <small>All tracked applications</small>
       </article>
-      <article class="stat-card">
+      <article class="summary-card">
         <span>Applied</span>
         <strong id="appliedCount">0</strong>
-        <small>Waiting for updates</small>
       </article>
-      <article class="stat-card">
+      <article class="summary-card">
         <span>Interview</span>
         <strong id="interviewCount">0</strong>
-        <small>In progress</small>
       </article>
-      <article class="stat-card">
+      <article class="summary-card">
         <span>Offers</span>
         <strong id="offerCount">0</strong>
-        <small>Positive outcomes</small>
       </article>
     </section>
 
-    <main class="main-grid">
-      <section class="panel form-panel">
-        <div class="panel-header">
-          <h2>Add application</h2>
-          <p>Start with a foundation form. You can add editing later.</p>
+    <!-- Main workspace: form on the left, tracked applications on the right. -->
+    <main class="workspace">
+      <aside class="panel composer-panel">
+        <div class="section-head tight">
+          <div>
+            <p class="section-label">New entry</p>
+            <h2>Add application</h2>
+          </div>
+          <p class="section-copy">Keep this compact for quick daily updates.</p>
         </div>
 
+        <!-- Main application input form. -->
         <form id="applicationForm" class="application-form">
           <label>
             Company
@@ -88,41 +95,51 @@
 
           <label>
             Notes
-            <textarea id="notes" rows="4" placeholder="Add recruiter notes, next steps, links, or reminders..."></textarea>
+            <textarea id="notes" rows="4" placeholder="Prep tasks, recruiter notes, links, reminders..."></textarea>
           </label>
 
           <button type="submit" class="btn btn-primary">Save application</button>
         </form>
-      </section>
+      </aside>
 
-      <section class="panel list-panel">
-        <div class="panel-header list-header">
+      <section class="panel board-panel">
+        <div class="section-head board-head">
           <div>
-            <h2>Your applications</h2>
-            <p>Filter by status and keep the list tidy.</p>
+            <p class="section-label">Pipeline</p>
+            <h2>Tracked applications</h2>
           </div>
+
           <!-- sr-only keeps the label accessible without displaying it. -->
-          <label class="filter-wrap">
-            <span class="sr-only">Filter applications</span>
-            <select id="filterStatus">
-              <option value="All">All statuses</option>
-              <option value="Applied">Applied</option>
-              <option value="Online Assessment">Online Assessment</option>
-              <option value="Interview">Interview</option>
-              <option value="Offer">Offer</option>
-              <option value="Rejected">Rejected</option>
-            </select>
-          </label>
+          <div class="board-controls">
+            <label class="filter-wrap">
+              <span class="sr-only">Filter applications</span>
+              <select id="filterStatus">
+                <option value="All">All statuses</option>
+                <option value="Applied">Applied</option>
+                <option value="Online Assessment">Online Assessment</option>
+                <option value="Interview">Interview</option>
+                <option value="Offer">Offer</option>
+                <option value="Rejected">Rejected</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <!-- Static row labels so the list feels more like a real tracker. -->
+        <div class="list-chrome" aria-hidden="true">
+          <span>Role</span>
+          <span>Status</span>
+          <span>Deadline</span>
         </div>
 
         <!-- When the first application is added, this is hidden. -->
         <div id="emptyState" class="empty-state">
           <div class="empty-icon">+</div>
           <h3>No applications yet</h3>
-          <p>Add your first application to the tracker!</p>
+          <p>Add your first role to start building the board.</p>
         </div>
 
-        <!-- The application cards are put in here via the back-end Javascript. -->
+        <!-- The application cards are inserted here via the back-end Javascript. -->
         <div id="applicationList" class="application-list"></div>
       </section>
     </main>
