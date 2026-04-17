@@ -232,7 +232,7 @@ textarea:focus {
 
 .btn {
   border: 1px solid transparent;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 11px 14px;
   font-weight: 700;
   cursor: pointer;
@@ -281,7 +281,7 @@ textarea:focus {
   grid-template-columns: minmax(0, 1.5fr) 150px 130px;
   gap: 12px;
   align-items: center;
-  border-radius: 12px;
+  border-radius: 5px;
   padding: 10px 14px;
   font-size: 0.76rem;
   text-transform: uppercase;
@@ -325,7 +325,7 @@ textarea:focus {
   align-items: center;
   gap: 8px;
   padding: 7px 10px;
-  border-radius: 999px;
+  border-radius: 5px;
   font-size: 0.78rem;
   font-weight: 700;
 }
@@ -334,7 +334,7 @@ textarea:focus {
   content: '';
   width: 8px;
   height: 8px;
-  border-radius: 999px;
+  border-radius: 5px;
   background: currentColor;
 }
 
@@ -356,7 +356,7 @@ textarea:focus {
   padding: 7px 10px;
   background: var(--surface-soft);
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 5px;
   color: var(--text-soft);
   font-size: 0.82rem;
 }
@@ -364,7 +364,7 @@ textarea:focus {
 .note-box {
   padding: 11px 12px;
   border: 1px dashed rgba(66, 122, 161, 0.24);
-  border-radius: 12px;
+  border-radius: 5px;
   background: #fbfdff;
   color: var(--text);
   line-height: 1.5;
@@ -381,7 +381,7 @@ textarea:focus {
   background: transparent;
   color: var(--danger);
   border: 1px solid rgba(184, 92, 92, 0.18);
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 8px 11px;
   cursor: pointer;
   font-weight: 700;
@@ -400,7 +400,7 @@ textarea:focus {
   height: 52px;
   display: grid;
   place-items: center;
-  border-radius: 14px;
+  border-radius: 5px;
   background: rgba(5, 102, 141, 0.08);
   color: var(--primary);
   font-size: 1.6rem;
