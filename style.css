@@ -1,1 +1,346 @@
 /* This is the CSS for the HTML of my program. */
+:root {
+  --bg: #0b1020;
+  --surface: #131a2e;
+  --surface-2: #1a2340;
+  --surface-3: #222d50;
+  --border: rgba(255,255,255,0.08);
+  --text: #edf2ff;
+  --muted: #9fadcf;
+  --primary: #6ea8fe;
+  --primary-2: #8b5cf6;
+  --success: #4ade80;
+  --warning: #facc15;
+  --danger: #fb7185;
+  --shadow: 0 20px 45px rgba(0,0,0,0.28);
+  --radius: 18px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(110,168,254,0.14), transparent 30%),
+    radial-gradient(circle at top right, rgba(139,92,246,0.12), transparent 28%),
+    var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+button, input, select, textarea { font: inherit; }
+
+.app-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 32px auto 48px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.05;
+}
+
+.subtitle {
+  margin: 12px 0 0;
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card, .panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.stat-card {
+  padding: 18px;
+}
+
+.stat-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 34px;
+  margin-bottom: 6px;
+}
+
+.stat-card small {
+  color: var(--muted);
+}
+
+.stat-card.accent {
+  background: linear-gradient(135deg, rgba(110,168,254,0.22), rgba(139,92,246,0.18));
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.panel {
+  padding: 22px;
+}
+
+.panel-header h2,
+.empty-state h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.panel-header p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.application-form {
+  margin-top: 18px;
+  display: grid;
+  gap: 14px;
+}
+
+.application-form label {
+  display: grid;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+input, select, textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  border-radius: 14px;
+  padding: 14px 14px;
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #8391b4;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: rgba(110,168,254,0.8);
+  box-shadow: 0 0 0 4px rgba(110,168,254,0.18);
+}
+
+.btn {
+  border: 1px solid transparent;
+  border-radius: 14px;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.18s ease, opacity 0.18s ease, background 0.18s ease;
+}
+
+.btn:hover { transform: translateY(-1px); }
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: white;
+}
+.btn-secondary {
+  background: rgba(110,168,254,0.14);
+  color: var(--text);
+  border-color: rgba(110,168,254,0.2);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--muted);
+  border-color: var(--border);
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 12px;
+}
+
+.filter-wrap select {
+  min-width: 170px;
+}
+
+.application-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.application-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.application-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.application-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.08rem;
+}
+
+.application-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.badge {
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.badge.applied { background: rgba(110,168,254,0.16); color: #b8d2ff; }
+.badge.online-assessment { background: rgba(250,204,21,0.16); color: #fde68a; }
+.badge.interview { background: rgba(139,92,246,0.18); color: #ddd6fe; }
+.badge.offer { background: rgba(74,222,128,0.18); color: #bbf7d0; }
+.badge.rejected { background: rgba(251,113,133,0.18); color: #fecdd3; }
+
+.application-meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 14px 0;
+}
+
+.application-meta span,
+.note-box {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.application-meta span {
+  padding: 8px 10px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.note-box {
+  padding: 12px;
+  color: #dbe4ff;
+  line-height: 1.5;
+}
+
+.card-actions {
+  margin-top: 14px;
+  display: flex;
+  justify-content: end;
+}
+
+.icon-btn {
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid rgba(251,113,133,0.2);
+  border-radius: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.empty-state {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  min-height: 320px;
+  color: var(--muted);
+}
+
+.empty-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: rgba(110,168,254,0.14);
+  color: var(--primary);
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 980px) {
+  .stats-grid,
+  .main-grid,
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar,
+  .list-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .app-shell {
+    width: min(100% - 20px, 1180px);
+    margin-top: 16px;
+  }
+}
