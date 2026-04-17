@@ -3,7 +3,8 @@ const STORAGE_KEY = 'application-tracker-items';
 
 const form = document.getElementById('applicationForm');
 const list = document.getElementById('applicationList');
-const emptyState = document.getElementById('emptyState');
+const emptyState = document.getElementById('emptyS
+                                           tate');
 const filterStatus = document.getElementById('filterStatus');
 const seedBtn = document.getElementById('seedBtn');
 const clearBtn = document.getElementById('clearBtn');
@@ -12,36 +13,6 @@ const totalCount = document.getElementById('totalCount');
 const appliedCount = document.getElementById('appliedCount');
 const interviewCount = document.getElementById('interviewCount');
 const offerCount = document.getElementById('offerCount');
-
-const sampleData = [
-  {
-    id: crypto.randomUUID(),
-    company: 'Amazon',
-    role: 'Software Development Engineer Apprentice',
-    status: 'Interview',
-    deadline: '2026-04-28',
-    location: 'London',
-    notes: 'Prepare OOP and data structures examples for final stage.'
-  },
-  {
-    id: crypto.randomUUID(),
-    company: 'IBM',
-    role: 'Junior Software Engineer',
-    status: 'Applied',
-    deadline: '2026-05-04',
-    location: 'Remote',
-    notes: 'Tailored CV toward backend and Python work.'
-  },
-  {
-    id: crypto.randomUUID(),
-    company: 'Meta',
-    role: 'Technology Apprentice',
-    status: 'Online Assessment',
-    deadline: '2026-04-22',
-    location: 'London',
-    notes: 'Complete OA this weekend and review time complexity.'
-  }
-];
 
 function getApplications() {
   return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
