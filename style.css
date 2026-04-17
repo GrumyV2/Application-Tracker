@@ -1,14 +1,14 @@
 /* This is the CSS for the HTML of my program. */
 :root {
-  --bg: #0b1020;
-  --surface: #131a2e;
-  --surface-2: #1a2340;
-  --surface-3: #222d50;
+  --bg: #ebf2fa;
+  --surface: #05668d;
+  --surface-2: #427aa1;
+  --surface-3: ##1f8ab5;
   --border: rgba(255,255,255,0.08);
-  --text: #edf2ff;
+  --text: #0f0c08;
   --muted: #9fadcf;
-  --primary: #6ea8fe;
-  --primary-2: #8b5cf6;
+  --primary: #a5be00;
+  --primary-2: #679436;
   --success: #4ade80;
   --warning: #facc15;
   --danger: #fb7185;
