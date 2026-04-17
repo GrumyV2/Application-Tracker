@@ -1,1 +1,136 @@
 <!-- The HTML of my program. -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Application Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Portfolio MVP</p>
+        <h1>Application Tracker</h1>
+        <p class="subtitle">Track your apprenticeships, internships, and job applications.</p>
+      </div>
+      <div class="topbar-actions">
+        <button id="seedBtn" class="btn btn-secondary">Load Sample Data</button>
+        <button id="clearBtn" class="btn btn-ghost">Clear All</button>
+      </div>
+    </header>
+
+    <!-- Stat counts are updated dynamically via the back-end Javascript. -->
+    <section class="stats-grid" aria-label="Application statistics">
+      <article class="stat-card accent">
+        <span>Total</span>
+        <strong id="totalCount">0</strong>
+        <small>All tracked applications</small>
+      </article>
+      <article class="stat-card">
+        <span>Applied</span>
+        <strong id="appliedCount">0</strong>
+        <small>Waiting for updates</small>
+      </article>
+      <article class="stat-card">
+        <span>Interview</span>
+        <strong id="interviewCount">0</strong>
+        <small>In progress</small>
+      </article>
+      <article class="stat-card">
+        <span>Offers</span>
+        <strong id="offerCount">0</strong>
+        <small>Positive outcomes</small>
+      </article>
+    </section>
+
+    <main class="main-grid">
+      <section class="panel form-panel">
+        <div class="panel-header">
+          <h2>Add application</h2>
+          <p>Start with a foundation form. You can add editing later.</p>
+        </div>
+
+        <form id="applicationForm" class="application-form">
+          <label>
+            Company
+            <input type="text" id="company" placeholder="Company Name Here" required />
+          </label>
+
+          <label>
+            Role
+            <input type="text" id="role" placeholder="Role Label Here" required />
+          </label>
+
+          <div class="two-col">
+            <label>
+              Status
+              <select id="status" required>
+                <option value="Applied">Applied</option>
+                <option value="Online Assessment">Online Assessment</option>
+                <option value="Interview">Interview</option>
+                <option value="Offer">Offer</option>
+                <option value="Rejected">Rejected</option>
+              </select>
+            </label>
+
+            <label>
+              Deadline
+              <input type="date" id="deadline" />
+            </label>
+          </div>
+
+          <label>
+            Location
+            <input type="text" id="location" placeholder="e.g. Location / Remote" />
+          </label>
+
+          <label>
+            Notes
+            <textarea id="notes" rows="4" placeholder="Add recruiter notes, next steps, links, or reminders..."></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-primary">Save application</button>
+        </form>
+      </section>
+
+      <section class="panel list-panel">
+        <div class="panel-header list-header">
+          <div>
+            <h2>Your applications</h2>
+            <p>Filter by status and keep the list tidy.</p>
+          </div>
+          <!-- sr-only keeps the label accessible without displaying it. -->
+          <label class="filter-wrap">
+            <span class="sr-only">Filter applications</span>
+            <select id="filterStatus">
+              <option value="All">All statuses</option>
+              <option value="Applied">Applied</option>
+              <option value="Online Assessment">Online Assessment</option>
+              <option value="Interview">Interview</option>
+              <option value="Offer">Offer</option>
+              <option value="Rejected">Rejected</option>
+            </select>
+          </label>
+        </div>
+
+        <!-- When the first application is added, this is hidden. -->
+        <div id="emptyState" class="empty-state">
+          <div class="empty-icon">+</div>
+          <h3>No applications yet</h3>
+          <p>Add your first application to the tracker!</p>
+        </div>
+
+        <!-- The application cards are put in here via the back-end Javascript. -->
+        <div id="applicationList" class="application-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Loaded last so all DOM elements are available when executed. -->
+  <script src="script.js"></script>
+</body>
+</html>
